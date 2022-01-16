@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on darwin)" generated="20220116 18:13:34.823" rpa="false" schemaversion="2">
+<suite id="s1" name="Test Post Method" source="/Users/h522166/Documents/Me/Robot/Test_Post_Method.robot">
+<test id="s1-t1" name="Check HTTP Status Code">
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${URL}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220116 18:13:35.677" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220116 18:13:35.678" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Sun, 16 Jan 2022 11:13:35 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '996', 'x-ratelimit-reset': '1642331649', 'vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'access-control-allow-credentials': 'true', 'cache-control': 'no-cache', 'pragma': 'no-cache', 'expires': '-1', 'access-control-expose-headers': 'Location', 'location': 'http://jsonplaceholder.typicode.com/posts/101', 'x-content-type-options': 'nosniff', 'etag': 'W/"f-4jjw4Y8q22Yv1PV9m28FczJgjzk"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Byb0pcZTNHb4JXYn5Rr1OvZOqzRBx7bWlIiQZYAD8ClI4mwmty6Su0bleesrTAzru7qjKuPRN%2BgXVecN2%2Fv1QMMcEyIQlhb%2F76sn9N8WSYXib33CFi7ZYcCVqObk9kMUXEvjDH04xdvTo3hOjrQWreYjW2xm%2FpHPh5i4"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6ce6ea535e3e8994-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={
+  "id": 101
+} 
+ </msg>
+<msg timestamp="20220116 18:13:35.678" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220116 18:13:35.035" endtime="20220116 18:13:35.678"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220116 18:13:35.679" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20220116 18:13:35.678" endtime="20220116 18:13:35.679"/>
+</kw>
+<status status="PASS" starttime="20220116 18:13:35.035" endtime="20220116 18:13:35.680"/>
+</test>
+<test id="s1-t2" name="Check Response Header">
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${URL}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220116 18:13:36.307" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220116 18:13:36.308" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Sun, 16 Jan 2022 11:13:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '995', 'x-ratelimit-reset': '1642331649', 'vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'access-control-allow-credentials': 'true', 'cache-control': 'no-cache', 'pragma': 'no-cache', 'expires': '-1', 'access-control-expose-headers': 'Location', 'location': 'http://jsonplaceholder.typicode.com/posts/101', 'x-content-type-options': 'nosniff', 'etag': 'W/"f-4jjw4Y8q22Yv1PV9m28FczJgjzk"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=K7s93GsNHV3wUHgGUSmQ%2FY2aHfbpoqFpq6GLYfIhTCDPHHD4fCzaai5rOtpxlKPPTHP%2BBEsSuvnvshmNLLHLrsSSll7MHH5vt%2B9OpJjfnOn4tU8Z%2FNamjN2zSEzk%2B8ugH4aLxdvlO6Q5qzpRJ5%2FWoBpECm64rAu4C75M"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6ce6ea5748e04cd1-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={
+  "id": 101
+} 
+ </msg>
+<msg timestamp="20220116 18:13:36.308" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220116 18:13:35.681" endtime="20220116 18:13:36.308"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response_headers}</var>
+<arg>${response.headers}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220116 18:13:36.309" level="INFO">${response_headers} = {'Date': 'Sun, 16 Jan 2022 11:13:36 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '15', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000',...</msg>
+<status status="PASS" starttime="20220116 18:13:36.308" endtime="20220116 18:13:36.309"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response_headers['Content-Type']}</arg>
+<arg>application/json; charset=utf-8</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220116 18:13:36.309" endtime="20220116 18:13:36.310"/>
+</kw>
+<status status="PASS" starttime="20220116 18:13:35.680" endtime="20220116 18:13:36.310"/>
+</test>
+<test id="s1-t3" name="Check Response match with Request">
+<kw name="Convert String to JSON" library="JSONLibrary">
+<var>${body}</var>
+<arg>{"key":"2"}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20220116 18:13:36.311" level="INFO">${body} = {'key': '2'}</msg>
+<status status="PASS" starttime="20220116 18:13:36.311" endtime="20220116 18:13:36.311"/>
+</kw>
+<kw name="POST" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${URL}</arg>
+<arg>data=${body}</arg>
+<doc>Sends a POST request.</doc>
+<msg timestamp="20220116 18:13:37.025" level="INFO">POST Request : url=https://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '5', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=key=2 
+ </msg>
+<msg timestamp="20220116 18:13:37.025" level="INFO">POST Response : url=https://jsonplaceholder.typicode.com/posts 
+ status=201, reason=Created 
+ headers={'Date': 'Sun, 16 Jan 2022 11:13:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '29', 'Connection': 'keep-alive', 'x-powered-by': 'Express', 'x-ratelimit-limit': '1000', 'x-ratelimit-remaining': '994', 'x-ratelimit-reset': '1642331649', 'vary': 'Origin, X-HTTP-Method-Override, Accept-Encoding', 'access-control-allow-credentials': 'true', 'cache-control': 'no-cache', 'pragma': 'no-cache', 'expires': '-1', 'access-control-expose-headers': 'Location', 'location': 'http://jsonplaceholder.typicode.com/posts/101', 'x-content-type-options': 'nosniff', 'etag': 'W/"1d-I6DZBfBOICeiG5Hmb1xFQev6SJc"', 'via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=v0ubEIdCcC3dqJaDvYrFSKoMyZx%2FJjxKhktGgL%2BYpMgJ3FCUk8x61%2FxhtmQk%2BzaDYr11V%2B6EGGp53LaTg6V%2FqVK%2FjC3B2X%2FO9AKOjI763DpKPs%2BNvq0S8kL1rkrUskeTzCb2knQBbwehimOQlgLodo3Q8T9RA%2FT9PUqW"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '6ce6ea5b4f584973-SIN', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400, h3-28=":443"; ma=86400, h3-27=":443"; ma=86400'} 
+ body={
+  "key": "2",
+  "id": 101
+} 
+ </msg>
+<msg timestamp="20220116 18:13:37.026" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20220116 18:13:36.311" endtime="20220116 18:13:37.026"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${response}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220116 18:13:37.027" level="INFO">${response} = {'key': '2', 'id': 101}</msg>
+<status status="PASS" starttime="20220116 18:13:37.026" endtime="20220116 18:13:37.027"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${response['key']}</arg>
+<arg>2</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220116 18:13:37.027" endtime="20220116 18:13:37.028"/>
+</kw>
+<status status="PASS" starttime="20220116 18:13:36.310" endtime="20220116 18:13:37.028"/>
+</test>
+<status status="PASS" starttime="20220116 18:13:34.825" endtime="20220116 18:13:37.029"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Test Post Method">Test Post Method</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.10.0 on darwin)" generated="20220116 18:16:13.765" rpa="false" schemaversion="2">
+<suite id="s1" name="Test UI" source="/Users/h522166/Documents/Me/Robot/Test_UI.robot">
+<test id="s1-t1" name="Add 1 iPhone to basket and verify payment screen">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>browser=gc</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220116 18:16:13.947" level="INFO">Opening browser 'gc' to base url 'https://www.apple.com/th/'.</msg>
+<status status="PASS" starttime="20220116 18:16:13.947" endtime="20220116 18:16:17.086"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.5s</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220116 18:16:17.087" endtime="20220116 18:16:17.087"/>
+</kw>
+<kw name="Click Menu iPhone and Buy iPhone">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu_iphone}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:17.088" endtime="20220116 18:16:18.119"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu_iphone}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:18.120" level="INFO">Clicking element '//*[@class="ac-gn-link ac-gn-link-iphone"]'.</msg>
+<status status="PASS" starttime="20220116 18:16:18.119" endtime="20220116 18:16:19.514"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button_buy_13pro}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:19.514" endtime="20220116 18:16:20.545"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_buy_13pro}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:20.546" level="INFO">Clicking element '//*[@id="main"]//*[@data-analytics-title="buy - iphone 13 pro"]'.</msg>
+<status status="PASS" starttime="20220116 18:16:20.546" endtime="20220116 18:16:22.747"/>
+</kw>
+<status status="PASS" starttime="20220116 18:16:17.088" endtime="20220116 18:16:22.747"/>
+</kw>
+<kw name="Select Screen Size">
+<var>${iphone_model}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${select_screen_size6_1inch}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:22.748" endtime="20220116 18:16:23.776"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${select_screen_size6_1inch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:23.776" level="INFO">Clicking element '//*[@class="rc-dimension-selector-row form-selector"][1]'.</msg>
+<status status="PASS" starttime="20220116 18:16:23.776" endtime="20220116 18:16:24.857"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${iphone_model}</var>
+<arg>${text_iphone_model}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:25.891" level="INFO">${iphone_model} = iPhone 13 Pro</msg>
+<status status="PASS" starttime="20220116 18:16:24.857" endtime="20220116 18:16:25.892"/>
+</kw>
+<msg timestamp="20220116 18:16:25.892" level="INFO">${iphone_model} = iPhone 13 Pro</msg>
+<status status="PASS" starttime="20220116 18:16:22.747" endtime="20220116 18:16:25.892"/>
+</kw>
+<kw name="Select Color">
+<var>${iphone_color}</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${select_color_sierrablue}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:25.893" level="INFO">Clicking element '//*[@class="rc-dimension-multiple form-selector-swatch column large-6 small-6 form-selector"][1]'.</msg>
+<status status="PASS" starttime="20220116 18:16:25.893" endtime="20220116 18:16:26.962"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${iphone_color}</var>
+<arg>${text_color}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:27.994" level="INFO">${iphone_color} = เซียร์ร่าบลู</msg>
+<status status="PASS" starttime="20220116 18:16:26.962" endtime="20220116 18:16:27.994"/>
+</kw>
+<msg timestamp="20220116 18:16:27.995" level="INFO">${iphone_color} = เซียร์ร่าบลู</msg>
+<status status="PASS" starttime="20220116 18:16:25.892" endtime="20220116 18:16:27.995"/>
+</kw>
+<kw name="Select Capacity">
+<var>${iphone_capacity}</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${select_capacity_128gb}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:27.996" level="INFO">Clicking element '//*[@class="rc-dimension-multiple form-selector-threeline column large-6 small-6 form-selector"][1]'.</msg>
+<status status="PASS" starttime="20220116 18:16:27.996" endtime="20220116 18:16:29.087"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${iphone_capacity}</var>
+<arg>${text_capacity}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:30.121" level="INFO">${iphone_capacity} = 128GB
+Footnote
+²</msg>
+<status status="PASS" starttime="20220116 18:16:29.087" endtime="20220116 18:16:30.121"/>
+</kw>
+<kw name="Get Regexp Matches" library="String">
+<var>${iphone_capacity}</var>
+<arg>${iphone_capacity}</arg>
+<arg>.*GB</arg>
+<doc>Returns a list of all non-overlapping matches in the given string.</doc>
+<msg timestamp="20220116 18:16:30.122" level="INFO">${iphone_capacity} = ['128GB']</msg>
+<status status="PASS" starttime="20220116 18:16:30.122" endtime="20220116 18:16:30.122"/>
+</kw>
+<msg timestamp="20220116 18:16:30.124" level="INFO">${iphone_capacity} = 128GB</msg>
+<status status="PASS" starttime="20220116 18:16:27.995" endtime="20220116 18:16:30.124"/>
+</kw>
+<kw name="Click Add To Cart">
+<var>${iphone_fullprice}</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${iphone_fullprice}</var>
+<arg>${text_fullprice}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:31.156" level="INFO">${iphone_fullprice} = ฿38,900.00</msg>
+<status status="PASS" starttime="20220116 18:16:30.125" endtime="20220116 18:16:31.156"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${button_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:31.156" level="INFO">Clicking button '//*[@id="root"]//*[@name="add-to-cart"]'.</msg>
+<status status="PASS" starttime="20220116 18:16:31.156" endtime="20220116 18:16:34.926"/>
+</kw>
+<msg timestamp="20220116 18:16:34.927" level="INFO">${iphone_fullprice} = ฿38,900.00</msg>
+<status status="PASS" starttime="20220116 18:16:30.124" endtime="20220116 18:16:34.927"/>
+</kw>
+<kw name="Click View Cart">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button_bag_view}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:34.928" endtime="20220116 18:16:35.960"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_bag_view}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:35.960" level="INFO">Clicking element '//*[@id="root"]//*[@value="proceed"]'.</msg>
+<status status="PASS" starttime="20220116 18:16:35.960" endtime="20220116 18:16:38.831"/>
+</kw>
+<status status="PASS" starttime="20220116 18:16:34.927" endtime="20220116 18:16:38.832"/>
+</kw>
+<kw name="Verify Payment Screen and Click Checkout">
+<arg>${iphone_model}</arg>
+<arg>${iphone_color}</arg>
+<arg>${iphone_capacity}</arg>
+<arg>${iphone_fullprice}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${text_iteminfo}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:38.833" endtime="20220116 18:16:39.863"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${summary_iphone_info}</var>
+<arg>${text_iteminfo}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:40.893" level="INFO">${summary_iphone_info} = iPhone 13 Pro ความจุ 128GB สีเซียร์ร่าบลู</msg>
+<status status="PASS" starttime="20220116 18:16:39.864" endtime="20220116 18:16:40.893"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${summary_price}</var>
+<arg>${text_iteminfo_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:41.925" level="INFO">${summary_price} = ฿38,900.00</msg>
+<status status="PASS" starttime="20220116 18:16:40.893" endtime="20220116 18:16:41.926"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${summary_total_price}</var>
+<arg>${text_summary_totol_price}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:42.956" level="INFO">${summary_total_price} = ฿38,900.00</msg>
+<status status="PASS" starttime="20220116 18:16:41.926" endtime="20220116 18:16:42.957"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${summary_iphone_info}</arg>
+<arg>${iphone_model} ความจุ ${iphone_capacity} สี${iphone_color}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220116 18:16:42.957" endtime="20220116 18:16:42.958"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${summary_price}</arg>
+<arg>${iphone_fullprice}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220116 18:16:42.958" endtime="20220116 18:16:42.958"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${summary_total_price}</arg>
+<arg>${iphone_fullprice}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20220116 18:16:42.959" endtime="20220116 18:16:42.959"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button_checkout}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220116 18:16:42.960" level="INFO">Clicking element '//*[@id="shoppingCart.actions.checkout"]'.</msg>
+<status status="PASS" starttime="20220116 18:16:42.959" endtime="20220116 18:16:44.048"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${button_guest_login}</arg>
+<arg>timeout=20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220116 18:16:44.048" endtime="20220116 18:16:46.319"/>
+</kw>
+<status status="PASS" starttime="20220116 18:16:38.832" endtime="20220116 18:16:46.319"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220116 18:16:46.320" endtime="20220116 18:16:46.889"/>
+</kw>
+<status status="PASS" starttime="20220116 18:16:13.946" endtime="20220116 18:16:46.889"/>
+</test>
+<status status="PASS" starttime="20220116 18:16:13.767" endtime="20220116 18:16:46.890"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test UI">Test UI</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
